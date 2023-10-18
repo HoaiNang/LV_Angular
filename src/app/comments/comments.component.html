@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Bình luận của bạn sẽ được hiển thị công khai tại đây.
+        Vui lòng sử dụng ngôn từ phù hợp, chuẩn mực vì một không gian mạng sạch!
+    </h2>
+    <h4>Thêm bình luận</h4>
+    <div>
+      <div class="form-group">
+        <textarea [(ngModel)]="comment" class="form-control" placeholder="Add a comment" cols="100" rows="20"></textarea>
+      </div>
+      <button mat-raised-button type="submit" color="primary"(click)="onSubmitComment()">Đăng</button>
+    </div>
+    <h3>Bình luận trước đó</h3>
+    <div class="comments-list">
+      <ul>
+        <li *ngFor="let c of comments">{{ c }}</li>
+      </ul>
+    </div>
+</div>

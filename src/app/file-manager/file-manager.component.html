@@ -1,0 +1,58 @@
+<h3>Upload Image File</h3>
+<input type="file" (change)="onFileUpload1($event)">
+<table>
+  <thead>
+    <tr>
+      <th>File Name</th>
+      <th>Content</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let file of fileList">
+      <td>{{ file }}</td>
+      <td><img *ngIf="fileContent1" [src]="fileContent1" alt="Uploaded Image"></td>
+      <td>
+        <!-- <button (click)="openFile(file)">Open</button> -->
+        <button (click)="deleteFile(file)">Delete</button>
+        <button (click)="downloadFile(file)">Download</button>
+        <input type="text" placeholder="New File Name" [(ngModel)]="newFileName">
+        <button (click)="renameFile(file)">Rename</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <h3>Upload Text File</h3>
+<input type="file" (change)="onFileUpload($event)">
+<table>
+  <thead>
+    <tr>
+      <th>File Name</th>
+      <th>Content</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let file1 of fileList">
+      <td>{{ file1 }}</td>
+      <td>{{fileContent}}</td>
+      <td>
+        <button (click)="openFile(file1)">Open</button>
+        <button (click)="deleteFile(file1)">Delete</button>
+        <button (click)="downloadFile(file1)">Download</button>
+        <input type="text" placeholder="New File Name" [(ngModel)]="newFileName">
+        <button (click)="renameFile(file1)">Rename</button>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+<!-- <input type="file" (change)="openFile($event)"> -->
+<!-- <input type="file" (change)="onFileUpload($event)"> -->
+<!-- <button (click)="saveFileStorage()">Save</button> -->
+
+<!-- <input type="text" placeholder="Old File Name" [(ngModel)]="oldFileName">
+<input type="text" placeholder="New File Name" [(ngModel)]="newFileName">
+<button (click)="renameFile(oldFileName, newFileName)">Rename</button> -->
+
+

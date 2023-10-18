@@ -1,0 +1,57 @@
+<form [formGroup]="myform" (ngSubmit)="Savehouse()">
+    <h1 mat-dialog-title>{{inputdata.title}}</h1>
+    <div mat-dialog-content>
+       <mat-form-field>
+        <mat-label >Tên nhà trọ</mat-label>
+        <input formControlName="title" matInput required>
+        <mat-error *ngIf="formControls.title.errors?.['required'] && formControls.title.touched">Name is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Địa chỉ</mat-label>
+        <input matInput formControlName="addr" required>
+        <mat-error *ngIf="formControls.addr.errors?.['required'] && formControls.addr.touched">Field is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Mô tả</mat-label>
+        <input matInput formControlName="desc" required>
+        <mat-error *ngIf="formControls.desc.errors?.['required'] && formControls.desc.touched">Field is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>SĐT liên hệ</mat-label>
+        <input matInput formControlName="phone" required>
+        <mat-error *ngIf="formControls.phone.errors?.['required'] && formControls.phone.touched">Field is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Giá thuê</mat-label>
+        <input matInput formControlName="rent_price" required>
+        <mat-error *ngIf="formControls.rent_price.errors?.['required'] && formControls.rent_price.touched">Field is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Số lượng phòng</mat-label>
+        <input matInput formControlName="nroom" required>
+        <mat-error *ngIf="formControls.nroom.errors?.['required'] && formControls.nroom.touched">Field is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Số lượng phòng trống</mat-label>
+        <input matInput formControlName="nbroom" required>
+        <mat-error *ngIf="formControls.nbroom.errors?.['required'] && formControls.nbroom.touched">Field is required</mat-error>
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Url hình ảnh</mat-label>
+        <input matInput formControlName="url" required>
+        <mat-error *ngIf="formControls.url.errors?.['required'] && formControls.url.touched">Field is required</mat-error>
+       </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tọa độ</mat-label>
+        <input matInput formControlName="coords" [value]="coordinates">
+      </mat-form-field>
+  
+
+      </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button type="submit" color="primary">Save</button>
+      <button (click)="closepopup()" mat-raised-button color="warn">Close</button>
+    </div>
+    </form>
+    <app-map></app-map>
+  

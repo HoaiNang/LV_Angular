@@ -1,0 +1,38 @@
+<form [formGroup]="myform" (ngSubmit)="Savehang()">
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+  <div mat-dialog-content>
+     <mat-form-field>
+      <mat-label >Tên loại</mat-label>
+      <input formControlName="tenLoai" matInput required>
+      <mat-error *ngIf="formControls.tenLoai.errors?.['required'] && formControls.tenLoai.touched">Name is required</mat-error>
+     </mat-form-field>
+     <mat-form-field>
+      <mat-label>Tên Người tạo</mat-label>
+      <input matInput formControlName="createUsername" required>
+      <mat-error *ngIf="formControls.createUsername.errors?.['required'] && formControls.createUsername.touched">Field is required</mat-error>
+      <!-- <mat-error *ngIf="formControls.createUsername.errors?.['email'] && formControls.createUsername.touched">Invalid email format</mat-error> -->
+
+     </mat-form-field>
+     <!-- <mat-form-field>
+      <mat-label>Chọn vị trí</mat-label>
+      <input matInput [value]="coordinates?.lat" name="latitude" placeholder="Latitude">
+      <input matInput [value]="coordinates?.lng" name="longitude" placeholder="Longitude">
+    </mat-form-field> -->
+    <mat-form-field>
+      <mat-label>Chọn vị trí</mat-label>
+      <input matInput formControlName="coords" [value]="coordinates">
+    </mat-form-field>
+
+      <div>
+        <mat-checkbox formControlName="isActive">Is Active</mat-checkbox>
+       </div>
+       <div>
+        <mat-checkbox formControlName="isDelete">Is Delete</mat-checkbox>
+       </div>
+    </div>
+  <div mat-dialog-actions>
+      <button mat-raised-button type="submit" color="primary">Save</button>
+    <button (click)="closepopup()" mat-raised-button color="warn">Close</button>
+  </div>
+  </form>
+  <app-map></app-map>

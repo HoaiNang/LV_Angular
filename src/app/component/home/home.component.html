@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Mới nhất</h1>
+    <mat-grid-list cols="3" gutterSize="10px">
+      <mat-grid-tile *ngFor="let house of houselist | slice:0:3">
+        <div>
+          <h2>{{ house.title }}</h2>
+          <p>Địa chỉ: {{ house.addr }}</p>
+          <p>Mô tả: {{ house.desc }}</p>
+          <p>SĐT: {{ house.phone }}</p>
+          <p>Số lượng phòng trống: {{ house.nbroom }}</p>
+          <p>Giá thuê: {{ house.rent_price }}</p>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>

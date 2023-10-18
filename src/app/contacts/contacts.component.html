@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Bạn có thể liên hệ với admin thông qua:</h1>
+    <p>Facebook: <a href="">www.facebook.com</a></p>
+    <p>Zalo/SĐT: 0987678789</p>
+    <p>Email: nang123@gmail.com</p>
+    <p>Hoặc gửi trực tiếp yêu cầu thông qua biểu mẫu bên dưới:</p>
+    <h1>Liên hệ admin</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"></form>
+    <div mat-dialog-content>
+        <mat-form-field>
+         <mat-label >Họ tên</mat-label>
+         <input formControlName="name" matInput required>
+        </mat-form-field>
+        <mat-form-field>
+         <mat-label>Địa chỉ email</mat-label>
+         <input matInput formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field>
+         <mat-label>Nội dung liên hệ</mat-label>
+         <input matInput formControlName="message" required>
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-raised-button type="submit" color="primary">Gửi</button>
+        </div>
+     
+    <!-- <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" class="form-control" formControlName="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" class="form-control" formControlName="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea class="form-control" formControlName="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+</div>
+  

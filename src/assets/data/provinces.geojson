@@ -1,0 +1,171 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.227348,
+          10.213258
+        ]
+      },
+      "properties": {
+        "name": "Kiên Giang",
+        "population": 199518,
+        "square": "50Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.94458,
+          21.355141
+        ]
+      },
+      "properties": {
+        "name": "Quảng Ninh",
+        "population": 1990518,
+        "square": "30Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.916176,
+          12.061401
+        ]
+      },
+      "properties": {
+        "name": "Bình Phước",
+        "population": 190518,
+        "square": "20Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.540573,
+          11.506045
+        ]
+      },
+      "properties": {
+        "name": "Bình Thuận",
+        "population": 180518,
+        "square": "20Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.945541,
+          9.532658
+        ]
+      },
+      "properties": {
+        "name": "Cà Mau",
+        "population": 1800518,
+        "square": "3000Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          104.836235,
+          20.66033
+        ]
+      },
+      "properties": {
+        "name": "Hòa Bình",
+        "population": 1800518,
+        "square": "3000Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.907143,
+          11.022277
+        ]
+      },
+      "properties": {
+        "name": "Bình Dương",
+        "population": 1800518,
+        "square": "3000Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.760925,
+          9.413637
+        ]
+      },
+      "properties": {
+        "name": "Sóc Trăng",
+        "population": 1800518,
+        "square": "3000Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.781113,
+          12.164319
+        ]
+      },
+      "properties": {
+        "name": "Ninh Thuận",
+        "population": 1800518,
+        "square": "3000Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.888359,
+          12.538558
+        ]
+      },
+      "properties": {
+        "name": "Đắk Lắk",
+        "population": 1800518,
+        "square": "3000Km2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.126015,
+          20.621742
+        ]
+      },
+      "properties": {
+        "name": "Hưng Yên",
+        "population": 1800518,
+        "square": "30Km2"
+      }
+    }
+
+  ]
+}
