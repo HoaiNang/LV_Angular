@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Mới nhất</h1>
     <mat-grid-list cols="3" gutterSize="10px">
-      <mat-grid-tile *ngFor="let house of houselist | slice:0:3">
+      <mat-grid-tile *ngFor="let house of houselist | slice:0:6">
         <div>
           <h2>{{ house.title }}</h2>
           <p>Địa chỉ: {{ house.addr }}</p>

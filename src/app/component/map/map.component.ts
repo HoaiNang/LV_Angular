@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { DataSharingService } from '../../data-sharing.service';
-import { HangTSService } from 'src/app/_services/hangts.service';
 import { HttpClient } from '@angular/common/http';
 import { PopUpService } from 'src/app/popup.service';
 import { WeatherService } from '../../weather.service'
+import { HouseService } from 'src/app/_services/house.service';
 
 @Component({
   selector: 'app-map',
@@ -22,7 +22,7 @@ export class MapComponent implements OnInit {
     private dataSharingService: DataSharingService,
     private http: HttpClient,
     private popupService: PopUpService,
-    private hangtsService: HangTSService,
+    private houseService: HouseService,
     private weatherService: WeatherService
   ) {}
 
@@ -85,7 +85,7 @@ export class MapComponent implements OnInit {
 
   // Lấy địa điểm từ server
   getLocations() {
-    this.hangtsService.GetHangTS().subscribe((data: any) => {
+    this.houseService.GetHouse().subscribe((data: any) => {
       this.datas = JSON.parse(data);
       this.displayLocationsOnMap();
     });
@@ -100,9 +100,9 @@ export class MapComponent implements OnInit {
         const marker = L.marker([coords.lat, coords.lng]).addTo(this.map);
         const popupContent = `
         <div>
-            <h1>Bạn đang ở tọa độ</h1>
-            <p>Vĩ độ: ${coords.lat}</p>
-            <p>Kinh độ: ${coords.lng}</p>
+            <h1>Thông tin nhà trọ</h1>
+            <p>Tên nhà trọ: ${data.title}</p>
+            <p>Địa chỉ: ${data.addr}</p>
             <button type="button" class="detail-button">Xem chi tiết</button>
           </div>
           `;
@@ -115,11 +115,13 @@ export class MapComponent implements OnInit {
         if (detailButton) {
           detailButton.addEventListener('click', () => {
             const detailPopupContent = `Thông tin chi tiết:<br>
-            <p>ID loại: ${data.id}</p>
-            <p>Tên loại: ${data.tenLoai}</p>
-            <p>Tên người tạo: ${data.createUsername}</p>
-            <p>Ngày tạo: ${data.createDate}</p>
-            <img src="../../../assets/thuysan.jpg" width="250" height="150" />
+            <p>Tên nhà trọ: ${data.title}</p>
+            <p>Địa chỉ: ${data.addr}</p>
+            <p>Mô tả: ${data.desc}</p>
+            <p>Số lượng phòng trống: ${data.nbroom}</p>
+            <p>Giá thuê: ${data.rent_price}</p>
+            <p>SĐT liên hệ: ${data.phone}</p>
+            <img src="../../../assets/nhatro.jpg" width="250" height="150" />
             `;
             const detailPopup = L.popup().setContent(detailPopupContent);
             marker.bindPopup(detailPopup).openPopup();

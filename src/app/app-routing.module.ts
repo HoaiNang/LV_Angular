@@ -7,7 +7,6 @@ import { FormdesignComponent } from './component/formdesign/formdesign.component
 import { RootComponent } from './component/root.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { HangTSComponent } from './component/hang-ts/hang-ts.component';
 import { MapComponent } from './component/map/map.component';
 import { FileManagersComponent } from './file-managers/file-managers.component';
 import { IntroductionComponent } from './introduction/introduction.component';

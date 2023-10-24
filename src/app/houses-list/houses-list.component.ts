@@ -63,7 +63,7 @@ export class HousesListComponent {
   }
 
   openDialog(code:any, title: any): void {
-    this.dialog.open(DialogHouseAnimationsDialog, {
+    this.dialog.open(DialogAnimationsDialog, {
       width: '350px',
       enterAnimationDuration: '300ms',
       exitAnimationDuration: '300ms',
@@ -88,12 +88,12 @@ export class HousesListComponent {
   `]
 
 })
-export class DialogHouseAnimationsDialog {
+export class DialogAnimationsDialog {
   title:any;
   //khai báo constructor để nhận tham số data và lưu nó trong một thuộc tính data
   constructor(
     private toastr: ToastrService,
-    public dialogRef: MatDialogRef<DialogHouseAnimationsDialog>,
+    public dialogRef: MatDialogRef<DialogAnimationsDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
   ngOnInit(): void {

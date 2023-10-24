@@ -21,7 +21,6 @@ import { RegisterComponent } from './auth/register/register.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
-import { DialogAnimationsDialog, HangTSComponent } from './component/hang-ts/hang-ts.component';
 import { PopupHangtsComponent } from './component/popup-hangts/popup-hangts.component';
 import { MapComponent } from './component/map/map.component';
 import { MarkerService } from './marker.service';
@@ -33,7 +32,7 @@ import { FileManagerComponent } from './file-manager/file-manager.component';
 import {environment} from '../environments/environment';
 import { FileManagersComponent } from './file-managers/file-managers.component';
 import { IntroductionComponent } from './introduction/introduction.component';
-import { HousesListComponent } from './houses-list/houses-list.component';
+import { DialogAnimationsDialog, HousesListComponent } from './houses-list/houses-list.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CommentsComponent } from './comments/comments.component';
 import { PopupHouseComponent } from './popup-house/popup-house.component';
@@ -51,7 +50,6 @@ import { PopupHouseComponent } from './popup-house/popup-house.component';
     DialogAnimationsDialog,
     LoginComponent,
     RegisterComponent,
-    HangTSComponent,
     PopupHangtsComponent,
     DialogAnimationsDialog1,
     MapComponent,
