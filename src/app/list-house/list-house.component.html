@@ -1,0 +1,77 @@
+<h1>Danh sách nhà trọ<h1>
+    <mat-card>
+        <mat-card-header>
+      <mat-form-field>
+        <input matInput (keyup)="Filterchange($event)" placeholder="Tìm kiếm" />
+      </mat-form-field>
+      <!-- <button style="margin-left: 60%;" (click)="addhouse()" mat-raised-button color="accent">Thêm (+)</button> -->
+    
+        </mat-card-header>
+        <mat-card-content>
+    
+    <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+        <ng-container matColumnDef="STT">
+          <th mat-sort-header mat-header-cell *matHeaderCellDef>STT</th>
+          <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Ten Nha Tro">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Tên Nhà Trọ</th>
+            <td mat-cell *matCellDef="let element">{{element.title}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Mo Ta">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Mô Tả</th>
+            <td mat-cell *matCellDef="let element">{{element.desc}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Dia Chi">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Địa Chỉ</th>
+            <td mat-cell *matCellDef="let element">{{element.addr}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="SDT Lien He">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>SĐT Liên Hệ</th>
+            <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="SL Phong Trong">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>SL Phòng Trống</th>
+            <td mat-cell *matCellDef="let element">{{element.nbroom}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Gia Thue">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Giá Thuê</th>
+            <td mat-cell *matCellDef="let element">{{element.rent_price}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="Hinh Anh">
+            <th mat-sort-header mat-header-cell *matHeaderCellDef>Ảnh</th>
+            <td mat-cell *matCellDef="let element">{{element.url}}</td>
+          </ng-container>
+    
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action</th>
+            <td mat-cell *matCellDef="let element">
+                <button (click)="edithouse(element.id)" mat-raised-button color="primary">Đặt phòng</button>
+            </td>
+          </ng-container>
+    
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+    
+    </table>
+    
+    </mat-card-content>
+    <br>
+    <mat-card-footer>
+    
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
+    
+    </mat-card-footer>
+    </mat-card>
+    
+    
+  

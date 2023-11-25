@@ -1,31 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MasterService } from '../_services/master.service';
+import { HttpClient } from '@angular/common/http';
+import { StorageService } from '../_services/storage.service';
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css']
 })
-export class ContactsComponent {
-  contactForm: FormGroup; // Biểu mẫu liên hệ
-  submitted = false; // Biến để kiểm tra xem biểu mẫu đã được gửi đi hay chưa
-
-  constructor(private formBuilder: FormBuilder) {
-    this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required], // Tên người gửi
-      email: ['', [Validators.required, Validators.email]], // Email người gửi
-      message: ['', Validators.required] // Nội dung tin nhắn
+export class ContactsComponent implements OnInit {
+  contactForm: FormGroup;
+  contacts: any[] = [];
+  API_URL = 'http://localhost:8080/';
+  constructor(private fb: FormBuilder, private http: HttpClient, private service: StorageService) {
+    this.contactForm = this.fb.group({
+      fullname: [''],
+      email: [''],
+      des: [''],
+      user_id: this.service.getUser().username
     });
   }
 
-  // Phương thức này được gọi khi người dùng gửi biểu mẫu
-  onSubmit() {
-    this.submitted = true;
-
-    // Kiểm tra nếu biểu mẫu không hợp lệ thì không thực hiện gì
-    if (this.contactForm.invalid) {
-      return;
-    }
-
-    // Gửi dữ liệu biểu mẫu lên máy chủ hoặc thực hiện các hành động liên quan đến liên hệ với admin ở đây
+  ngOnInit() {
+    this.getContacts();
   }
+
+  getContacts() {
+    this.http.get(this.API_URL + 'contacts').subscribe((data: any) => {
+      this.contacts = data;
+    });
+  }
+
+  onSubmit() {
+    const formData = this.contactForm.value;
+    this.saveContact(formData);
+  }
+
+  saveContact(data: any) {
+    this.http.post(this.API_URL + 'contacts', data).subscribe((response: any) => {
+      this.contacts.push(response);
+      this.contactForm.reset();
+    });
+  }
+
+  updateContact(code: any, data: any) {
+    this.http.put(this.API_URL + 'contacts/' + code, data).subscribe(() => {
+      this.getContacts();
+    });
+  }
+
+  deleteContact(code: any) {
+    this.http.delete(this.API_URL + 'contacts/' + code).subscribe(() => {
+      this.contacts = this.contacts.filter(contact => contact.code !== code);
+    });
+  }
+
+  // Các phương thức khác liên quan đến xem chi tiết, sửa, xóa
 }
+

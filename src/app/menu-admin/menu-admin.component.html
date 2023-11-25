@@ -1,0 +1,50 @@
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start" class="custom">
+      <mat-nav-list>
+        <mat-list-item>
+          <button routerLink="users-manager" mat-button><mat-icon>person</mat-icon>Quản lý tài khoản người dùng</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="house" mat-button>
+              <mat-icon>list_alt</mat-icon> Quản lý danh sách nhà trọ</button>
+          </mat-list-item>
+        <mat-list-item>
+          <button routerLink="contacts-manager" mat-button><mat-icon>contact_phone</mat-icon>Quản lý liên hệ</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button routerLink="comments-manager" mat-button><mat-icon>comment</mat-icon>Quản lý bình luận</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button routerLink="payments-manager" mat-button>
+            <mat-icon>payment</mat-icon>Quản lý thanh toán
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="reports-manager" mat-button>
+              <mat-icon>filter_list</mat-icon> Thống kê số liệu</button>
+          </mat-list-item>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar color="basic" class="mat-elevation-z8">
+        <button (click)="drawer.toggle()" mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Hệ thống hỗ trợ tìm kiếm nhà trọ</span>
+        <mat-form-field>
+          <input matInput (keyup)="Filterchange($event)" placeholder="Tìm kiếm" />
+        </mat-form-field>
+        <button mat-raised-button color="primary" [routerLink]="['/register']" *ngIf="!isLoggedIn">Đăng ký</button>
+        <button mat-raised-button color="primary" [routerLink]="['/login']" *ngIf="!isLoggedIn">Đăng nhập</button>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-label>{{name}}</mat-label><mat-icon>arrow_drop_down</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button (click)="logout()" mat-menu-item>Logout</button>
+        </mat-menu>
+      </mat-toolbar>
+      <div style="text-align: center; min-height: 600px">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

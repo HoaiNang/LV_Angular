@@ -27,4 +27,5 @@ export class MenubarComponent {
     const value = (data.target as HTMLInputElement).value;
     this.dataSource.filter = value;
   }
+  isLoggedIn = this.storageService.isLoggedIn();
 }

@@ -49,7 +49,7 @@ export class PopupHouseComponent {
       //console.log(item);
       this.myform.setValue({id: this.editdata.id, title:this.editdata.title, desc:this.editdata.desc, coords: this.coordinates, addr:this.editdata.addr, 
       phone:this.editdata.phone, nroom: this.editdata.nroom, nbroom:this.editdata.nbroom, rent_price: this.editdata.rent_price,
-      url:this.editdata.url, user_id:this.editdata.user_id })
+      image:this.editdata.image, user_id:this.editdata.user_id })
     });
   }
 
@@ -67,7 +67,7 @@ export class PopupHouseComponent {
     nroom: ['', Validators.required],
     nbroom: ['', Validators.required],
     rent_price: ['', Validators.required],
-    url: ['', Validators.required],
+    image: ['', Validators.required],
     user_id: this.storageService.getUser().id
   });
 

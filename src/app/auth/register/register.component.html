@@ -1,21 +1,21 @@
 <mat-card>
+  <h1>Đăng ký</h1>
   <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
     <div class="form-group">
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Username</mat-label>
-        <input matInput type="text" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
-        <mat-error *ngIf="username.errors && f.submitted">
-          <div *ngIf="username.errors?.['required']">Username is required</div>
-          <div *ngIf="username.errors?.['minlength']">
-            Username must be at least 3 characters
+        <mat-label>Họ và tên</mat-label>
+        <input matInput type="text" name="fullname" [(ngModel)]="form.fullname" required minlength="5" maxlength="100" #fullname="ngModel" />
+        <mat-error *ngIf="fullname.errors && f.submitted">
+          <div *ngIf="fullname.errors?.['required']">Fullname is required</div>
+          <div *ngIf="fullname.errors?.['minlength']">
+            Fullname must be at least 5 characters
           </div>
           <div *ngIf="username.errors?.['maxlength']">
-            Username must be at most 20 characters
+            Fullname must be at most 100 characters
           </div>
         </mat-error>
       </mat-form-field>
     </div>
-
     <div class="form-group">
       <mat-form-field appearance="outline" class="full-width">
         <mat-label>Email</mat-label>
@@ -31,7 +31,49 @@
 
     <div class="form-group">
       <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Password</mat-label>
+        <mat-label>Số CCCD</mat-label>
+        <input matInput type="text" name="CCCD" [(ngModel)]="form.sCCCD" required minlength="12" #sCCCD="ngModel" />
+        <mat-error *ngIf="sCCCD.errors && f.submitted">
+          <div *ngIf="sCCCD.errors?.['required']">CCCD is required</div>
+          <div *ngIf="sCCCD.errors?.['required']">
+            CCCD must be at least 12 characters
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Số điện thoại</mat-label>
+        <input matInput type="text" name="phone" [(ngModel)]="form.phone" required minlength="10" #phone="ngModel" />
+        <mat-error *ngIf="phone.errors && f.submitted">
+          <div *ngIf="phone.errors?.['required']">phone is required</div>
+          <div *ngIf="phone.errors?.['required']">
+            phone must be at least 10 characters
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Tên người dùng</mat-label>
+        <input matInput type="text" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" />
+        <mat-error *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors?.['required']">Username is required</div>
+          <div *ngIf="username.errors?.['minlength']">
+            Username must be at least 3 characters
+          </div>
+          <div *ngIf="username.errors?.['maxlength']">
+            Username must be at most 20 characters
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Mật khẩu</mat-label>
         <input matInput type="password" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
         <mat-error *ngIf="password.errors && f.submitted">
           <div *ngIf="password.errors?.['required']">Password is required</div>
@@ -41,9 +83,26 @@
         </mat-error>
       </mat-form-field>
     </div>
-
     <div class="form-group">
-      <button mat-raised-button color="primary">Sign Up</button>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nhập lại mật khẩu</mat-label>
+        <input matInput type="password" name="repassword" [(ngModel)]="form.repassword" required minlength="6" #repassword="ngModel" />
+        <mat-error *ngIf="repassword.errors && f.submitted">
+          <div *ngIf="repassword.errors?.['required']">Password is required</div>
+          <div *ngIf="repassword.errors?.['required']">
+            Password must be at least 6 characters
+          </div>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- <div class="form-group">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Trạng thái tài khoản</mat-label>
+        <input matInput type="text" name="isActive" [(ngModel)]="form.isActive" #isActive="ngModel" />
+      </mat-form-field>
+    </div> -->
+    <div class="form-group">
+      <button mat-raised-button color="primary">Đăng ký</button>
     </div>
 
     <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-warning">

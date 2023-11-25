@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.custom{
+  background-color: forestgreen;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Tùy chỉnh chiều cao container theo nhu cầu */
+}
+
+.image-container img {
+  margin: auto;
+}
+.white-text{
+  color: white;
+}
+mat-list-item button{
+  color: white;
+}
+mat-form-field{
+  margin-left: 500px;
+}

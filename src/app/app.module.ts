@@ -36,6 +36,16 @@ import { DialogAnimationsDialog, HousesListComponent } from './houses-list/house
 import { ContactsComponent } from './contacts/contacts.component';
 import { CommentsComponent } from './comments/comments.component';
 import { PopupHouseComponent } from './popup-house/popup-house.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { AdminComponent } from './admin/admin.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { UsersManagerComponent } from './users-manager/users-manager.component';
+import { ContactsManagerComponent } from './contacts-manager/contacts-manager.component';
+import { CommentsManagerComponent } from './comments-manager/comments-manager.component';
+import { PaymentsManagerComponent } from './payments-manager/payments-manager.component';
+import { ReportsManagerComponent } from './reports-manager/reports-manager.component';
+import { ListHouseComponent } from './list-house/list-house.component';
+import { PopupDatphongComponent } from './popup-datphong/popup-datphong.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +69,17 @@ import { PopupHouseComponent } from './popup-house/popup-house.component';
     HousesListComponent,
     ContactsComponent,
     CommentsComponent,
-    PopupHouseComponent
+    PopupHouseComponent,
+    PaymentsComponent,
+    AdminComponent,
+    MenuAdminComponent,
+    UsersManagerComponent,
+    ContactsManagerComponent,
+    CommentsManagerComponent,
+    PaymentsManagerComponent,
+    ReportsManagerComponent,
+    ListHouseComponent,
+    PopupDatphongComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,14 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   form: any = {
-    username: null,
+    fullname: null,
     email: null,
-    password: null
+    phone: null,
+    sCCCD: null,
+    username: null,
+    password: null,
+    repassword: null,
+    isActive: false
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -22,9 +27,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { username, email, password } = this.form;
+    const { username, email, password, fullname, sCCCD, repassword, phone,  isActive } = this.form;
 
-    this.authService.register(username, email, password).subscribe({
+    this.authService.register(username, email, password, fullname, sCCCD, repassword, phone, isActive).subscribe({
       next: data => {
         console.log(data);
         this.isSuccessful = true;

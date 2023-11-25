@@ -1,0 +1,26 @@
+<h1>Liên hệ đặt phòng</h1>
+    <form ></form>
+    <div mat-dialog-content [formGroup]="datphongForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+         <mat-label >Họ tên</mat-label>
+         <input formControlName="fullname" matInput required>
+        </mat-form-field>
+
+        <mat-form-field>
+         <mat-label>Địa chỉ email</mat-label>
+         <input matInput formControlName="email" required>
+        </mat-form-field>
+
+        <mat-form-field>
+         <mat-label>Số CCCD</mat-label>
+         <input matInput formControlName="CCCD" required>
+        </mat-form-field>
+
+        <mat-form-field>
+        <mat-label>Số điện thoại</mat-label>
+         <input matInput formControlName="phone" required>
+        </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-raised-button type="submit" color="primary">Đặt phòng</button>
+      <button  mat-raised-button color="warn">Hủy</button>
+    </div>

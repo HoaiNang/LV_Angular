@@ -1,3 +1,13 @@
-<input type="file" (change)="onFileSelected($event)" />
-<button (click)="downloadFile()">Download File</button>
-
+<div>
+    <!-- Form để tải lên tệp tin -->
+    <form  enctype="multipart/form-data">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <button type="submit">Tải lên</button>
+    </form> 
+  </div>
+  
+  <div *ngFor="let image of images">
+    <img [src]="image.path" alt="{{ image.name }}" />
+    <p>{{ image.name }}</p>
+    <!-- Thêm các trường khác của ảnh nếu cần -->
+  </div>

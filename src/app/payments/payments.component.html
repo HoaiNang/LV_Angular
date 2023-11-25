@@ -1,0 +1,20 @@
+<div class="payment-form">
+    <h2>Thông tin thanh toán</h2>
+    <form (submit)="createPayment()">
+      <div class="form-group">
+        <label for="amount">Số tiền:</label>
+        <input type="number" id="amount" name="amount" [(ngModel)]="paymentData.amount" required>
+      </div>
+      <div class="form-group">
+        <label for="orderCode">Mã đơn hàng:</label>
+        <input type="text" id="orderCode" name="orderCode" [(ngModel)]="paymentData.orderCode" required>
+      </div>
+      <button type="submit">Thanh toán</button>
+    </form>
+  
+    <div *ngIf="paymentUrl">
+      <p>Chuyển hướng đến trang thanh toán...</p>
+      <a [href]="paymentUrl" target="_blank">Click vào đây nếu chuyển hướng không tự động</a>
+    </div>
+  </div>
+  

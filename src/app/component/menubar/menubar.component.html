@@ -1,14 +1,6 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer opened="true" mode="side" position="start" class="custom">
     <mat-nav-list>
-      <!-- <div class="image-container">
-        <img src="../../../assets/logo tg.jpg" width="100"></div>
-        <h5 class= "white-text" style="text-align: center">SỞ NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN</h5> -->
-      <!-- <mat-list-item>
-        <button routerLink="card" mat-button>
-          <mat-icon>dashboard</mat-icon> Dashboard
-        </button>
-      </mat-list-item> -->
       <mat-list-item>
         <button routerLink="" mat-button><mat-icon>home</mat-icon> Trang chủ</button>
       </mat-list-item>
@@ -22,37 +14,22 @@
         <button routerLink="contacts" mat-button><mat-icon>phone</mat-icon>Liên hệ hỗ trợ</button>
       </mat-list-item>
       <mat-list-item>
-        <button routerLink="comments" mat-button><mat-icon>person</mat-icon>Bình luận và đánh giá</button>
+        <button routerLink="comments" mat-button><mat-icon>person</mat-icon>Bình luận</button>
       </mat-list-item>
       <mat-list-item>
         <button routerLink="map" mat-button>
           <mat-icon>location_on</mat-icon> Bản đồ</button>
       </mat-list-item>
-      <!-- <mat-list-item>
-        <button routerLink="hangts" mat-button>
-          <mat-icon>table</mat-icon> Table
-        </button>
-      </mat-list-item> -->
-      <!-- <mat-list-item>
-        <button routerLink="map" mat-button>
-          <mat-icon>location_on</mat-icon> Bản đồ số
-        </button>
-      </mat-list-item>
       <mat-list-item>
         <button routerLink="file-manager" mat-button>
-          <mat-icon>create_new_folder</mat-icon> Quản lý file
+          <mat-icon>folder</mat-icon> file</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button routerLink="payments" mat-button>
+          <mat-icon>payment</mat-icon> Thanh toán
         </button>
-      </mat-list-item> -->
-      <!-- <mat-list-item>
-        <button routerLink="mapwindy" mat-button>
-          <mat-icon>map</mat-icon> Map Windy
-        </button>
-      </mat-list-item> -->
-      <!-- <mat-list-item>
-        <button routerLink="form" mat-button>
-          <mat-icon>receipt</mat-icon> Form
-        </button>
-      </mat-list-item> -->
+      </mat-list-item>
+      
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
@@ -64,8 +41,8 @@
       <mat-form-field>
         <input matInput (keyup)="Filterchange($event)" placeholder="Tìm kiếm" />
       </mat-form-field>
-      <!-- <button mat-raised-button color="primary">Đăng ký</button>
-      <button mat-raised-button color="primary">Đăng nhập</button> -->
+      <button mat-raised-button color="primary" [routerLink]="['/register']" *ngIf="!isLoggedIn">Đăng ký</button>
+      <button mat-raised-button color="primary" [routerLink]="['/login']" *ngIf="!isLoggedIn">Đăng nhập</button>
       <span class="example-spacer"></span>
       <button mat-button [matMenuTriggerFor]="menu"><mat-label>{{name}}</mat-label><mat-icon>arrow_drop_down</mat-icon></button>
       <mat-menu #menu="matMenu">
