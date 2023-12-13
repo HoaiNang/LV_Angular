@@ -22,6 +22,7 @@ import { CommentsManagerComponent } from './comments-manager/comments-manager.co
 import { PaymentsManagerComponent } from './payments-manager/payments-manager.component';
 import { ReportsManagerComponent } from './reports-manager/reports-manager.component';
 import { ListHouseComponent } from './list-house/list-house.component';
+import { DanhSachHinhAnhComponent } from './danh-sach-hinh-anh/danh-sach-hinh-anh.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
       {path:'',component:HomeComponent},
       {path:'home',component:HomeComponent},
       {path:'map',component:MapComponent},
-      {path:'file-manager',component:FileManagersComponent},
+      {path:'file-manager',component:DanhSachHinhAnhComponent},
       {path:'intro',component: IntroductionComponent},
       {path:'house',component: ListHouseComponent},
       {path:'contacts',component: ContactsComponent},

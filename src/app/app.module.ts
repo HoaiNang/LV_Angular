@@ -46,6 +46,8 @@ import { PaymentsManagerComponent } from './payments-manager/payments-manager.co
 import { ReportsManagerComponent } from './reports-manager/reports-manager.component';
 import { ListHouseComponent } from './list-house/list-house.component';
 import { PopupDatphongComponent } from './popup-datphong/popup-datphong.component';
+import { DanhSachHinhAnhComponent } from './danh-sach-hinh-anh/danh-sach-hinh-anh.component';
+import { ThemLuuAnhComponent } from './them-luu-anh/them-luu-anh.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import { PopupDatphongComponent } from './popup-datphong/popup-datphong.componen
     PaymentsManagerComponent,
     ReportsManagerComponent,
     ListHouseComponent,
-    PopupDatphongComponent
+    PopupDatphongComponent,
+    DanhSachHinhAnhComponent,
+    ThemLuuAnhComponent
   ],
   imports: [
     BrowserModule,

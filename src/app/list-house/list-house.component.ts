@@ -18,6 +18,7 @@ import { PopupDatphongComponent } from '../popup-datphong/popup-datphong.compone
 export class ListHouseComponent {
   houselist !: House[];
   dataSource: any;
+  baseUrl = 'http://localhost:8080/api/file/anh/';
   displayedColumns: string[] = ["STT", "Ten Nha Tro", "Dia Chi", "Mo Ta", "Gia Thue","SDT Lien He", "SL Phong Trong", "Hinh Anh", "action"];
   @ViewChild(MatPaginator) paginatior !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;

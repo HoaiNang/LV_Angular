@@ -1,0 +1,36 @@
+
+<button mat-raised-button (click)="openThemLuuAnhDialog()">Thêm ảnh</button>
+
+<!-- <mat-table [dataSource]="luuAnhList" class="mat-elevation-z8"> -->
+
+  <!-- Tên ảnh Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Tên ảnh</mat-header-cell>
+    <mat-cell *matCellDef="let luuAnh">{{ luuAnh.name }}</mat-cell>
+  </ng-container>
+
+  <!-- URL Column -->
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef>hình ảnh</mat-header-cell>
+    <mat-cell *matCellDef="let luuAnh">
+      <img [src]="baseUrl + luuAnh.url" alt="Hình ảnh" width="150px"
+
+      height="150px">
+    </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+    <mat-cell *matCellDef="let luuAnh">
+
+      <!-- <button mat-icon-button (click)="taiFile(luuAnh)">
+        <mat-icon>cloud_download</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['name', 'url', 'actions']"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: ['name', 'url', 'actions'];"></mat-row> -->
+<!-- </mat-table> -->
+

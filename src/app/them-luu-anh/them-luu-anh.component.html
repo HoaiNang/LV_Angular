@@ -1,0 +1,20 @@
+<form [formGroup]="myform" (ngSubmit)="saveAnh()">
+    <h1 mat-dialog-title>Thêm mới</h1>
+    <div mat-dialog-content>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>tên hình ảnh</mat-label>
+        <input formControlName="name" matInput required />
+        <mat-error *ngIf="formControls.name.errors?.['required']">
+          Tên ảnh lớp là bắt buộc!
+        </mat-error>
+      </mat-form-field>
+        <label>Chọn ảnh</label>
+        <input type="file" (change)="onFileSelect($event)" required
+      />
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button type="submit" color="primary">Lưu</button>
+      <button (click)="closePopup()" mat-stroked-button color="warn" type="button">Đóng</button>
+    </div>
+  </form>
+  

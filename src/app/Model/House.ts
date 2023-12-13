@@ -6,8 +6,6 @@ export class House{
     phone?:string;
     nroom?:any;
     nbroom?:any;
-    image?:string;
     user_id?:any;
     rent_price?:Float32Array;
-    coords?:string;
 }

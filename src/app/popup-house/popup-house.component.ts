@@ -32,10 +32,10 @@ export class PopupHouseComponent {
     return this.myform.controls;
   }
   ngOnInit(): void {
-    this.coordinates = this.dataSharingService.getCoordinates();
-      if (this.coordinates) {
-        this.myform.patchValue({ coords: this.coordinates.toString()});
-      }
+    // this.coordinates = this.dataSharingService.getCoordinates();
+    //   if (this.coordinates) {
+    //     this.myform.patchValue({ coords: this.coordinates.toString()});
+    //   }
     this.inputdata = this.data?.title ? this.data : {};
     if (this.inputdata.code > 0) {
       this.isEdit = true;
@@ -47,9 +47,9 @@ export class PopupHouseComponent {
     this.service.GetHousebyid(id).subscribe(item => {
       this.editdata = item;
       //console.log(item);
-      this.myform.setValue({id: this.editdata.id, title:this.editdata.title, desc:this.editdata.desc, coords: this.coordinates, addr:this.editdata.addr, 
+      this.myform.setValue({id: this.editdata.id, title:this.editdata.title, desc:this.editdata.desc, addr:this.editdata.addr, 
       phone:this.editdata.phone, nroom: this.editdata.nroom, nbroom:this.editdata.nbroom, rent_price: this.editdata.rent_price,
-      image:this.editdata.image, user_id:this.editdata.user_id })
+      user_id:this.editdata.user_id })
     });
   }
 
@@ -61,13 +61,11 @@ export class PopupHouseComponent {
     id:[],
     title: ['', Validators.required],
     desc: ['', Validators.required],
-    coords: [],
     addr: ['', Validators.required],
     phone: ['', Validators.required],
     nroom: ['', Validators.required],
     nbroom: ['', Validators.required],
     rent_price: ['', Validators.required],
-    image: ['', Validators.required],
     user_id: this.storageService.getUser().id
   });
 

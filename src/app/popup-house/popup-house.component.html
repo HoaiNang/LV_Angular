@@ -36,22 +36,15 @@
         <input matInput formControlName="nbroom" required>
         <mat-error *ngIf="formControls.nbroom.errors?.['required'] && formControls.nbroom.touched">Field is required</mat-error>
        </mat-form-field>
-       <mat-form-field>
+       <!-- <mat-form-field> -->
         <mat-label>Hình ảnh</mat-label>
-        <input matInput formControlName="image" required>
-        <mat-error *ngIf="formControls.image.errors?.['required'] && formControls.image.touched">Field is required</mat-error>
-       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Tọa độ</mat-label>
-        <input matInput formControlName="coords" [value]="coordinates">
-      </mat-form-field>
-  
-
+        <!-- <input matInput formControlName="image" required>
+        <mat-error *ngIf="formControls.image.errors?.['required'] && formControls.image.touched">Field is required</mat-error> -->
+        <app-danh-sach-hinh-anh></app-danh-sach-hinh-anh>
+       <!-- </mat-form-field> -->
       </div>
     <div mat-dialog-actions>
         <button mat-raised-button type="submit" color="primary">Save</button>
       <button (click)="closepopup()" mat-raised-button color="warn">Close</button>
     </div>
     </form>
-    <app-map></app-map>
-  
